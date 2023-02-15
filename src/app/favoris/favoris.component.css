@@ -1,10 +1,13 @@
-img {
-  width: 350px;
-  border-radius: 10px;
+.container {
+  display: flex;
 }
 .fa-star {
   transition: 0.4s;
 }
 .fa-star-true {
   color: #de4f32;
+}
+
+.fa-none {
+  display: none;
 }

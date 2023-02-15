@@ -12,6 +12,8 @@ import { UpcomingComponent } from './mainRequest/upcoming/upcoming.component';
 import { TopratedComponent } from './mainRequest/toprated/toprated.component';
 import { MoviePageComponent } from './movie-page/movie-page.component';
 import { FormComponent } from './form/form.component';
+import { ActorPageComponent } from './actor-page/actor-page.component';
+import { FavorisComponent } from './favoris/favoris.component';
 
 
 
@@ -24,7 +26,9 @@ import { FormComponent } from './form/form.component';
     UpcomingComponent,
     TopratedComponent,
     MoviePageComponent,
-    FormComponent
+    FormComponent,
+    ActorPageComponent,
+    FavorisComponent
   ],
   imports: [
     BrowserModule,

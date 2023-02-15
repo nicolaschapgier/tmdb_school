@@ -1,0 +1,17 @@
+<span *ngIf="array.length < 1"
+  >Vous n'avez pas encore choisi de films favoris</span
+>
+<span *ngIf="array.length > 1">Mes films favoris</span>
+<div class="container" *ngFor="let item of array">
+  <img
+    src="https://image.tmdb.org/t/p/w500/{{ item.backdrop_path }}"
+    alt="{{ item.original_title }}"
+    [ngClass]="isInStorage(item.title) ? 'fa-star-true' : 'fa-none'"
+
+  />
+  <i
+    class="fa-solid fa-star"
+    (click)="remToFav(item)"
+    [ngClass]="isInStorage(item.title) ? 'fa-star-true' : 'fa-none'"
+  ></i>
+</div>

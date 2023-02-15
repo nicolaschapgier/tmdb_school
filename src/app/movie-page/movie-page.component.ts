@@ -10,10 +10,7 @@ import { DataService } from '../data.service';
 export class MoviePageComponent {
   public movieId!: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private dataService: DataService
-  ) {}
+  constructor(public route: ActivatedRoute, private dataService: DataService) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
@@ -36,5 +33,24 @@ export class MoviePageComponent {
     this.dataService.getActing(movieId).subscribe((data) => {
       this.actors = data.cast;
     });
+  }
+
+  faIsClicked: boolean = false;
+  addToFav(data: any) {
+    if (this.faIsClicked == false) {
+      localStorage.setItem(data.title, JSON.stringify(data));
+    } else {
+      localStorage.removeItem(data.title);
+    }
+    this.faIsClicked = !this.faIsClicked;
+  }
+
+  isInStorage(info: any) {
+    for (let i = 0; i < localStorage.length; i++) {
+      if (info.includes(localStorage.key(i)!)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

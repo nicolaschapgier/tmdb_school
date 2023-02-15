@@ -25,14 +25,20 @@
         <p>Sortie le {{ infos.release_date | date : "dd/MM/yyyy" }}</p>
         <p>Stat de popularités : {{ infos.popularity }}</p>
         <p>Résumé : {{ infos.overview }}</p>
+        <i
+          class="fa-solid fa-star"
+          (click)="addToFav(infos)"
+          [ngClass]="isInStorage(infos.title) ? 'fa-star-true' : 'fa-star'"
+        ></i>
       </div>
     </div>
   </section>
   <section class="artists">
-    <div *ngFor="let actors of actors.slice(0.,9)">
+    <div *ngFor="let actors of actors">
       <img
+        [routerLink]="'/actor/' + actors.id"
         src="https://image.tmdb.org/t/p/w500/{{ actors.profile_path }}"
-        alt=""
+        alt="{{ actors.name }}"
       />
     </div>
   </section>

@@ -59,8 +59,16 @@ img {
   display: flex;
   flex-wrap: nowrap;
   gap: 10px;
+  overflow-x: scroll;
 }
 
 .artists img {
   width: 200px;
+}
+
+.fa-star {
+  transition: 0.4s;
+}
+.fa-star-true {
+  color: #de4f32;
 }
