@@ -1,0 +1,39 @@
+<div
+  class="container"
+  [ngStyle]="{
+    background:
+      'linear-gradient(black, transparent, transparent, black), url(https://image.tmdb.org/t/p/original/' +
+      infos.poster_path +
+      ')',
+    'background-repeat': 'no-repeat',
+    'background-size': '100%'
+  }"
+>
+  <section class="content">
+    <h1>{{ infos.title }}</h1>
+    <div class="main">
+      <img
+        src="https://image.tmdb.org/t/p/w500/{{ infos.poster_path }}"
+        [alt]="infos.title"
+      />
+      <div class="infos">
+        <div class="genres">
+          <p *ngFor="let genre of infos.genres" class="genre">
+            {{ genre.name }}
+          </p>
+        </div>
+        <p>Sortie le {{ infos.release_date | date : "dd/MM/yyyy" }}</p>
+        <p>Stat de popularités : {{ infos.popularity }}</p>
+        <p>Résumé : {{ infos.overview }}</p>
+      </div>
+    </div>
+  </section>
+  <section class="artists">
+    <div *ngFor="let actors of actors.slice(0.,9)">
+      <img
+        src="https://image.tmdb.org/t/p/w500/{{ actors.profile_path }}"
+        alt=""
+      />
+    </div>
+  </section>
+</div>

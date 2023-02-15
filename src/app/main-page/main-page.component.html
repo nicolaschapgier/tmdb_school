@@ -1,0 +1,23 @@
+<app-form></app-form>
+
+<h2>Les films populaire du moments</h2>
+<div class="container">
+  <app-popular
+    *ngFor="let popular of popularMovies"
+    [popMovies]="popular"
+  ></app-popular>
+</div>
+
+<h2>Prochainement dans les salles</h2>
+
+<div class="container">
+  <app-upcoming
+    *ngFor="let coming of upcoming"
+    [comMovies]="coming"
+  ></app-upcoming>
+</div>
+<h2>Les films les mieux notés</h2>
+
+<div class="container">
+  <app-toprated *ngFor="let playing of top" [topRated]="playing"></app-toprated>
+</div>

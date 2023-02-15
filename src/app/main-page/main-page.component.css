@@ -1,0 +1,13 @@
+
+h2 {
+  text-align: center;
+  margin: 80px 0px;
+  font-size: 32px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 8px;
+}
