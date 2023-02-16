@@ -1,0 +1,82 @@
+* {
+  background: transparent;
+}
+
+.content {
+  background: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  border-radius: 10px;
+}
+
+p {
+  color: black;
+}
+h1 {
+  color: black;
+  text-align: left;
+  font-size: 40px;
+  margin-left: 40px;
+}
+
+.container {
+  height: 90vh;
+  position: sticky;
+}
+
+img {
+  width: 300px;
+  border-radius: 10px;
+}
+.main {
+  display: flex;
+  width: 80vw;
+  padding: 40px;
+}
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.genres {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.genre {
+  background-color: rgba(98, 98, 98, 0.8);
+  /* width: 250px; */
+  border: 1px solid rgb(255, 255, 255);
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+.artists {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+.artists img {
+  width: 200px;
+}
+
+.fa-solid{
+  cursor: pointer;
+}
+
+.fa-star {
+  transition: 0.4s;
+}
+.fa-star-true {
+  color: #de4f32;
+}
+
+.displayNone{
+  display: none;
+}

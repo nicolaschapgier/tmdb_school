@@ -45,4 +45,22 @@ export class DataService {
       https://api.themoviedb.org/3/movie/${id}/credits?api_key=8cf693bf63d50e4511be5b59e6475d9c&language=en-FR`
     );
   }
+
+  // Recherche info sur l'acteur
+
+  getActorInfo(id:number):Observable<any>{
+    return this.http.get<any>(
+      `https://api.themoviedb.org/3/person/${id}?api_key=8cf693bf63d50e4511be5b59e6475d9c&language=en-FR`
+    )
+  }
+  
+  // Recherche liste des films dans lesquels l'acteur à joué
+  getActorMovies(movie_id:number):Observable<any>{
+    return this.http.get<any>(
+      `https://api.themoviedb.org/3/person/${movie_id}/credits?api_key=8cf693bf63d50e4511be5b59e6475d9c&language=en-US`
+    )
+  }
+  
 }
+
+

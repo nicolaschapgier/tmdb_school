@@ -39,6 +39,7 @@
         [routerLink]="'/actor/' + actors.id"
         src="https://image.tmdb.org/t/p/w500/{{ actors.profile_path }}"
         alt="{{ actors.name }}"
+        [ngClass]="{ displayNone: actors.profile_path == null }"
       />
     </div>
   </section>

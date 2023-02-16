@@ -47,7 +47,6 @@ img {
 
 .genre {
   background-color: rgba(98, 98, 98, 0.8);
-  /* width: 250px; */
   border: 1px solid rgb(255, 255, 255);
   padding: 8px;
   border-radius: 10px;
@@ -66,9 +65,16 @@ img {
   width: 200px;
 }
 
+.fa-solid{
+  cursor: pointer;
+}
+
 .fa-star {
   transition: 0.4s;
 }
 .fa-star-true {
   color: #de4f32;
+}
+.displayNone{
+  display: none;
 }

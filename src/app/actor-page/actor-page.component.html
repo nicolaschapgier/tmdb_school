@@ -1,1 +1,41 @@
-<p>actor-page works!</p>
+<p>{{ actorId }}</p>
+<div
+  class="container"
+  [ngStyle]="{
+    background:
+      'linear-gradient(black, transparent, transparent, black), url(https://image.tmdb.org/t/p/original/' +
+      actorInfos.profile_path +
+      ')',
+    'background-repeat': 'no-repeat',
+    'background-size': '100%'
+  }"
+>
+  <section class="content">
+    <h1>{{ actorInfos.name }}</h1>
+    <div class="main">
+      <img
+        src="https://image.tmdb.org/t/p/w500/{{ actorInfos.profile_path }}"
+        [alt]="actorInfos.title"
+      />
+      <div class="infos">
+        <div class="genres">
+          <p *ngFor="let genre of actorInfos.genres" class="genre">
+            {{ genre.name }}
+          </p>
+        </div>
+        <p>Né le {{ actorInfos.birthday | date : "dd/MM/yyyy" }}</p>
+        <p>{{ actorInfos.biography }}</p>
+      </div>
+    </div>
+  </section>
+  <section class="artists">
+    <div *ngFor="let movie of actorMovies">
+      <img
+        [routerLink]="'/movie/' + movie.id"
+        src="https://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}"
+        alt="{{ movie.title }}"
+        [ngClass]="{displayNone : movie.backdrop_path == null}"
+      />
+    </div>
+  </section>
+</div>

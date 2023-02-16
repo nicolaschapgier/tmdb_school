@@ -4,6 +4,9 @@
 .fa-star {
   transition: 0.4s;
 }
+.fa-solid{
+  cursor: pointer;
+}
 .fa-star-true {
   color: #de4f32;
 }

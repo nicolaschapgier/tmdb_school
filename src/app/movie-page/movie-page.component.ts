@@ -13,12 +13,20 @@ export class MoviePageComponent {
   constructor(public route: ActivatedRoute, private dataService: DataService) {}
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.movieId = parseInt(params['popMoviesId']);
-    });
+    this.getMovieId();
     this.movieInfos(this.movieId);
     this.movieActeur(this.movieId);
   }
+
+  // On récupère l'ID du movie
+
+  getMovieId() {
+    this.route.params.subscribe((params) => {
+      this.movieId = parseInt(params['popMoviesId']);
+    });
+  }
+
+  // On récupère les infos du movie
 
   infos!: any;
   movieInfos(movieId: number) {
@@ -28,12 +36,16 @@ export class MoviePageComponent {
     });
   }
 
+  // On récupère les acteurs du movie
+
   actors!: any;
   movieActeur(movieId: number) {
     this.dataService.getActing(movieId).subscribe((data) => {
       this.actors = data.cast;
     });
   }
+
+  // Gestion des favoris avec le local storage
 
   faIsClicked: boolean = false;
   addToFav(data: any) {
