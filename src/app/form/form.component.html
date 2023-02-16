@@ -4,6 +4,8 @@
     name="search"
     id="search"
     placeholder="Rechercher un film..."
+    [(ngModel)]="inputText"
+    (keyup)="moviesFilterFromService()"
   />
   <i class="fa-solid fa-magnifying-glass"></i>
 </form>

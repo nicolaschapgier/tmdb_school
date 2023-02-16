@@ -32,7 +32,7 @@ export class MoviePageComponent {
   movieInfos(movieId: number) {
     this.dataService.getMovieById(movieId).subscribe((data) => {
       this.infos = data;
-      console.log(this.infos);
+      // console.log(this.infos);
     });
   }
 

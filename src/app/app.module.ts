@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,7 @@ import { MoviePageComponent } from './movie-page/movie-page.component';
 import { FormComponent } from './form/form.component';
 import { ActorPageComponent } from './actor-page/actor-page.component';
 import { FavorisComponent } from './favoris/favoris.component';
+import { InputResultComponent } from './input-result/input-result.component';
 
 
 
@@ -28,12 +30,13 @@ import { FavorisComponent } from './favoris/favoris.component';
     MoviePageComponent,
     FormComponent,
     ActorPageComponent,
-    FavorisComponent
-  ],
+    FavorisComponent,
+    InputResultComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

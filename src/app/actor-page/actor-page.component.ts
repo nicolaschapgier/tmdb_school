@@ -42,7 +42,7 @@ export class ActorPageComponent {
   getActorMoviesFromService(id: number) {
     this.dataService.getActorMovies(id).subscribe((data) => {
       this.actorMovies = data.cast;
-      console.log(this.actorMovies);
+      // console.log(this.actorMovies);
     });
   }
 }

@@ -1,0 +1,9 @@
+<div [ngClass]="{ displayNone: movieFromInput.poster_path == null }">
+  <img
+    [routerLink]="'/movie/' + movieFromInput.id"
+    src="https://image.tmdb.org/t/p/w500/{{ movieFromInput.poster_path }}"
+    [alt]="movieFromInput.title"
+  />
+  <i class="fa-solid fa-star" (click)="addToFav(movieFromInput)"
+  [ngClass]="isInStorage(movieFromInput.id) ? 'fa-star-true' : 'fa-star'"></i>
+</div>

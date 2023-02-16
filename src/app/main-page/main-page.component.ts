@@ -18,10 +18,18 @@ export class MainPageComponent {
     this.upComing();
     this.topRated();
   }
+
+  arrayFromInput!: any;
+  moviesReceiveFromInput(movieInput: any): void {
+    this.arrayFromInput = movieInput;
+    console.log(this.arrayFromInput);
+  }
+
+
   popular() {
     this.dataService.getPopularMovies().subscribe((data) => {
       this.popularMovies = data.results;
-      console.log(this.popularMovies);
+      // console.log(this.popularMovies);
     });
   }
 

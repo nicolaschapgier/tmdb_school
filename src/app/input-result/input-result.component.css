@@ -1,0 +1,17 @@
+img {
+  width: 350px;
+  border-radius: 10px;
+}
+.fa-solid {
+  cursor: pointer;
+}
+
+.fa-star {
+  transition: 0.4s;
+}
+.fa-star-true {
+  color: #de4f32;
+}
+.displayNone {
+  display: none;
+}

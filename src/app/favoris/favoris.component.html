@@ -6,12 +6,16 @@
   <img
     src="https://image.tmdb.org/t/p/w500/{{ item.backdrop_path }}"
     alt="{{ item.original_title }}"
-    [ngClass]="isInStorage(item.title) ? 'fa-star-true' : 'fa-none'"
+    [ngClass]="(isInStorage(item.title) || isInStorage(item.id)) ? 'fa-star-true' : 'fa-none'"
 
   />
   <i
     class="fa-solid fa-star"
-    (click)="remToFav(item)"
-    [ngClass]="isInStorage(item.title) ? 'fa-star-true' : 'fa-none'"
+    (click)="remToFav(item.title); remToFav(item.id)"
+    [ngClass]="(isInStorage(item.title) || isInStorage(item.id)) ? 'fa-star-true' : 'fa-none'"
+
   ></i>
 </div>
+<!-- [ngClass]="(isInStorage(item.title) || isInStorageById(item.id)) ? 'fa-star-true' : 'fa-none'"
+
+[ngClass]="(isInStorage(item.title) || isInStorageById(item.id)) ? 'fa-star-true' : 'fa-none'" -->
