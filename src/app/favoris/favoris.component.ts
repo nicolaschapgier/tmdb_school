@@ -1,4 +1,5 @@
 import { Component, OnChanges } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-favoris',
@@ -12,18 +13,19 @@ export class FavorisComponent implements OnChanges {
   ngOnChanges(e: any) {
     console.log(e);
   }
+
+  constructor(private dataService: DataService) {}
+
   array: any = [];
 
   loadData() {
     for (let i = 0; i < localStorage.length; i++) {
-      let movieTitle = localStorage.key(i);
-      let movieId = localStorage.key(i);
+      let movieKeyName = localStorage.key(i);
 
-      let data = JSON.parse(localStorage.getItem(movieTitle! && movieId!)!);
-      // let dataId = JSON.parse(localStorage.getItem(movieId!)!);
+      let data = JSON.parse(localStorage.getItem(movieKeyName!)!);
       this.array.push(data);
       console.log(this.array);
-    } // tout fonctionne ça ne s'affiche pas car la star reste non cliquée
+    }
   }
 
   faIsClicked!: boolean;
@@ -32,26 +34,15 @@ export class FavorisComponent implements OnChanges {
     localStorage.removeItem(data);
   }
 
-  isInStorage(info: any) {
-    for (let i = 0; i < localStorage.length; i++) {
-      if (typeof info == 'string') {
-        if (info.includes(localStorage.key(i)!)) {
-          return true;
-        }
-      } else if (typeof info === 'number') {
-        if (info.toString().includes(localStorage.key(i)!)) {
-          return true;
-        }
-      }
-    }
-    return false;
+  isInStorageFromService(info: any) {
+    return this.dataService.isInStorage(info);
   }
-
 
   storage(info: any): any {
     for (let i = 0; i < localStorage.length; i++) {
       (typeof info === 'string' && info.includes(localStorage.key(i)!)) ||
-      (typeof info === 'number' && info.toString().includes(localStorage.key(i)!))
+      (typeof info === 'number' &&
+        info.toString().includes(localStorage.key(i)!))
         ? true
         : false;
     }

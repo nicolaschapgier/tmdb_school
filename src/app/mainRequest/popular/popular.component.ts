@@ -8,15 +8,10 @@ import { Component, Input } from '@angular/core';
 export class PopularComponent {
   @Input() popMovies!: any;
 
-  faIsClicked: boolean = false;
-
-  addToFav(data: any) {
-    if (this.faIsClicked == false) {
-      localStorage.setItem(data.title, JSON.stringify(data));
-    } else {
-      localStorage.removeItem(data.title);
-    }
-    this.faIsClicked = !this.faIsClicked;
+  fav(data: any) {
+    localStorage.getItem(data.title)
+      ? localStorage.removeItem(data.title)
+      : localStorage.setItem(data.title, JSON.stringify(data));
   }
 
   isInStorage(info: any) {
@@ -27,5 +22,4 @@ export class PopularComponent {
     }
     return false;
   }
-
 }

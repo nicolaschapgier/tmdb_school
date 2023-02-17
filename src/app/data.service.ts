@@ -67,4 +67,21 @@ export class DataService {
       `https://api.themoviedb.org/3/search/movie?api_key=8cf693bf63d50e4511be5b59e6475d9c&language=fr-FR&query=${input}&page=1&include_adult=false&region=FR`
     );
   }
+
+
+  isInStorage(info: any) {
+    for (let i = 0; i < localStorage.length; i++) {
+      if (typeof info == 'string') {
+        if (info.includes(localStorage.key(i)!)) {
+          return true;
+        }
+      } else if (typeof info === 'number') {
+        if (info.toString().includes(localStorage.key(i)!)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  
 }
