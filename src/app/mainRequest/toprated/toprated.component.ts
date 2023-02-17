@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TopratedComponent {
 
-  @Input() topRated!: any;
+  @Input() movie!: any;
   
 }

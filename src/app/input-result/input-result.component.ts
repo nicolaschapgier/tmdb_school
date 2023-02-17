@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-input-result',
@@ -8,23 +9,13 @@ import { Component, Input } from '@angular/core';
 export class InputResultComponent {
   @Input() movieFromInput!: any;
 
-  faIsClicked: boolean = false;
+  constructor(private dataService: DataService) {}
 
-  addToFav(data: any) {
-    if (this.faIsClicked == false) {
-      localStorage.setItem(data.id, JSON.stringify(data));
-    } else {
-      localStorage.removeItem(data.id);
-    }
-    this.faIsClicked = !this.faIsClicked;
+  fav(data: any) {
+    this.dataService.favFromServiceId(data);
   }
 
-  isInStorage(value: number): boolean {
-    for (let i = 0; i < localStorage.length; i++) {
-      if (value.toString().includes(localStorage.key(i)!)) {
-        return true;
-      }
-    }
-    return false;
+  isInStorageFromService(info: any) {
+    return this.dataService.isInStorage(info);
   }
 }

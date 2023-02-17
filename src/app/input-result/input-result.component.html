@@ -4,6 +4,6 @@
     src="https://image.tmdb.org/t/p/w500/{{ movieFromInput.poster_path }}"
     [alt]="movieFromInput.title"
   />
-  <i class="fa-solid fa-star" (click)="addToFav(movieFromInput)"
-  [ngClass]="isInStorage(movieFromInput.id) ? 'fa-star-true' : 'fa-star'"></i>
+  <i class="fa-solid fa-star" (click)="fav(movieFromInput)"
+  [ngClass]="isInStorageFromService(movieFromInput.id) ? 'fa-star-true' : 'fa-star'"></i>
 </div>

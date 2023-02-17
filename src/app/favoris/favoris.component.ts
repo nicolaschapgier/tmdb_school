@@ -33,21 +33,11 @@ export class FavorisComponent implements OnChanges {
   remToFav(data: any) {
     localStorage.removeItem(data);
     if (localStorage.length < 1) {
-      location.reload();
+      location.reload(); // Recharge la page pour l'apparition du span "Aucun film ajouté au favoris"
     }
   }
 
   isInStorageFromService(info: any) {
     return this.dataService.isInStorage(info);
-  }
-
-  storage(info: any): any {
-    for (let i = 0; i < localStorage.length; i++) {
-      (typeof info === 'string' && info.includes(localStorage.key(i)!)) ||
-      (typeof info === 'number' &&
-        info.toString().includes(localStorage.key(i)!))
-        ? true
-        : false;
-    }
   }
 }

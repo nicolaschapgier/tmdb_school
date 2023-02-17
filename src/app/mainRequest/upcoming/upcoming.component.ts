@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./upcoming.component.css'],
 })
 export class UpcomingComponent {
-  @Input() comMovies!: any;
+  @Input() movie!: any;
 }

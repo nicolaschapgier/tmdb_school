@@ -57,12 +57,7 @@ export class MoviePageComponent {
     this.faIsClicked = !this.faIsClicked;
   }
 
-  isInStorage(info: any) {
-    for (let i = 0; i < localStorage.length; i++) {
-      if (info.includes(localStorage.key(i)!)) {
-        return true;
-      }
-    }
-    return false;
+  isInStorageFromService(info: any) {
+    return this.dataService.isInStorage(info);
   }
 }

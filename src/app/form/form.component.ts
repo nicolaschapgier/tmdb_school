@@ -17,7 +17,6 @@ export class FormComponent {
   moviesFilterFromService() {
     this.dataService.getMovieByInput(this.inputText).subscribe((data) => {
       this.moviesFromInput = data.results;
-      // console.log(this.moviesFromInput);
       this.moviesEmitFromInput.emit(this.moviesFromInput);
     });
   }

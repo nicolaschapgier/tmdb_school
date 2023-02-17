@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-popular',
@@ -6,20 +7,15 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./popular.component.css'],
 })
 export class PopularComponent {
-  @Input() popMovies!: any;
+  @Input() movie!: any;
+
+  constructor(private dataService: DataService) {}
 
   fav(data: any) {
-    localStorage.getItem(data.title)
-      ? localStorage.removeItem(data.title)
-      : localStorage.setItem(data.title, JSON.stringify(data));
+    this.dataService.favFromService(data);
   }
 
-  isInStorage(value: any) {
-    for (let i = 0; i < localStorage.length; i++) {
-      if (localStorage.key(i)! == value) {
-        return true;
-      }
-    }
-    return false;
+  isInStorageFromService(info: any) {
+    return this.dataService.isInStorage(info);
   }
 }

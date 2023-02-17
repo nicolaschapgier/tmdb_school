@@ -1,10 +1,12 @@
 <img
-  [routerLink]="'/movie/' + popMovies.id"
-  src="https://image.tmdb.org/t/p/w500/{{ popMovies.poster_path }}"
-  [alt]="popMovies.title"
+  [routerLink]="'/movie/' + movie.id"
+  src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+  [alt]="movie.title"
 />
 <i
   class="fa-solid fa-star"
-  (click)="fav(popMovies)"
-  [ngClass]="isInStorage(popMovies.title) ? 'fa-star-true' : 'fa-star'"
+  (click)="fav(movie)"
+  [ngClass]="
+    isInStorageFromService(movie.title) ? 'fa-star-true' : 'fa-star'
+  "
 ></i>

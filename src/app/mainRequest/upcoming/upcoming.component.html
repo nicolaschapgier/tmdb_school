@@ -1,6 +1,6 @@
-<a [routerLink]="comMovies.title">
+<a [routerLink]="'/movie/' + movie.id">
   <img
-    src="https://image.tmdb.org/t/p/w500/{{ comMovies.poster_path }}"
-    [alt]="comMovies.title"
+    src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+    [alt]="movie.title"
   />
 </a>

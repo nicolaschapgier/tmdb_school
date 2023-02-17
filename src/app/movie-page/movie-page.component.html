@@ -28,7 +28,7 @@
         <i
           class="fa-solid fa-star"
           (click)="addToFav(infos)"
-          [ngClass]="isInStorage(infos.title) ? 'fa-star-true' : 'fa-star'"
+          [ngClass]="isInStorageFromService(infos.title) ? 'fa-star-true' : 'fa-star'"
         ></i>
       </div>
     </div>
