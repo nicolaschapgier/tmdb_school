@@ -4,9 +4,15 @@ img {
 }
 .fa-star {
   transition: 0.4s;
+  position: relative;
+  left: -50px;
+  top: -20px;
+  background: transparent;
 }
 .fa-star-true {
   color: #de4f32;
+  transform: rotate(145deg);
+
 }
 
 .fa-solid {

@@ -32,6 +32,9 @@ export class FavorisComponent implements OnChanges {
 
   remToFav(data: any) {
     localStorage.removeItem(data);
+    if (localStorage.length < 1) {
+      location.reload();
+    }
   }
 
   isInStorageFromService(info: any) {

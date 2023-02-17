@@ -14,9 +14,9 @@ export class PopularComponent {
       : localStorage.setItem(data.title, JSON.stringify(data));
   }
 
-  isInStorage(info: any) {
+  isInStorage(value: any) {
     for (let i = 0; i < localStorage.length; i++) {
-      if (info.includes(localStorage.key(i)!)) {
+      if (localStorage.key(i)! == value) {
         return true;
       }
     }
