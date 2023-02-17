@@ -2,3 +2,12 @@ img {
   width: 350px;
   border-radius: 10px;
 }
+
+.fa-star-true {
+  color: #de4f32;
+  transform: rotate(145deg);
+}
+
+.fa-solid {
+  cursor: pointer;
+}

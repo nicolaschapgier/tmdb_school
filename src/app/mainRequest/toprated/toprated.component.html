@@ -3,3 +3,10 @@
   src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
   [alt]="movie.title"
 />
+<i
+  class="fa-solid fa-star"
+  (click)="fav(movie)"
+  [ngClass]="
+    isInStorageFromService(movie.title) ? 'fa-star-true' : 'fa-star'
+  "
+></i>

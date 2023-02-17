@@ -12,3 +12,10 @@
 .fa-none {
   display: none;
 }
+.fa-star {
+  transition: 0.4s;
+  position: relative;
+  left: -50px;
+  top: 250px;
+  background: transparent;
+}
