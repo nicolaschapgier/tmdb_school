@@ -1,9 +1,7 @@
 .container {
   display: flex;
 }
-.fa-star {
-  transition: 0.4s;
-}
+
 .fa-solid{
   cursor: pointer;
 }

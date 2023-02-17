@@ -6,9 +6,7 @@ img {
   cursor: pointer;
 }
 
-.fa-star {
-  transition: 0.4s;
-}
+
 .fa-star-true {
   color: #de4f32;
 }
