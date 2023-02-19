@@ -27,7 +27,7 @@
         <p>Résumé : {{ infos.overview }}</p>
         <i
           class="fa-solid fa-star"
-          (click)="addToFav(infos)"
+          (click)="fav(infos)"
           [ngClass]="isInStorageFromService(infos.title) ? 'fa-star-true' : 'fa-star'"
         ></i>
       </div>

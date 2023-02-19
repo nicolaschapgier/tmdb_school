@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { DataService } from '../data.service';
+import { DataService } from 'src/app/api/data.service';
 
 @Component({
   selector: 'app-form',

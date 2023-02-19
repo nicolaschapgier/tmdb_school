@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { DataService } from 'src/app/data.service';
+import { DataService } from 'src/app/api/data.service';
+import { LocalService } from 'src/app/storageAndFav/local.service';
+
 @Component({
   selector: 'app-upcoming',
   templateUrl: './upcoming.component.html',
@@ -8,13 +10,13 @@ import { DataService } from 'src/app/data.service';
 export class UpcomingComponent {
   @Input() movie!: any;
 
-  constructor(private dataService: DataService) {}
+  constructor(private localService: LocalService) {}
 
   fav(data: any) {
-    this.dataService.favFromService(data);
+    this.localService.favFromService(data);
   }
 
   isInStorageFromService(info: any) {
-    return this.dataService.isInStorage(info);
+    return this.localService.isInStorage(info);
   }
 }

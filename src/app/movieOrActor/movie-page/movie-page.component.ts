@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../data.service';
+import { DataService } from 'src/app/api/data.service';
+import { LocalService } from 'src/app/storageAndFav/local.service';
 
 @Component({
   selector: 'app-movie-page',
@@ -10,7 +11,11 @@ import { DataService } from '../data.service';
 export class MoviePageComponent {
   public movieId!: any;
 
-  constructor(public route: ActivatedRoute, private dataService: DataService) {}
+  constructor(
+    public route: ActivatedRoute,
+    private dataService: DataService,
+    private localService: LocalService
+  ) {}
 
   ngOnInit() {
     this.getMovieId();
@@ -46,18 +51,12 @@ export class MoviePageComponent {
   }
 
   // Gestion des favoris avec le local storage
-
-  faIsClicked: boolean = false;
-  addToFav(data: any) {
-    if (this.faIsClicked == false) {
-      localStorage.setItem(data.title, JSON.stringify(data));
-    } else {
-      localStorage.removeItem(data.title);
-    }
-    this.faIsClicked = !this.faIsClicked;
+  fav(data: any) {
+    this.localService.favFromService(data);
   }
 
+
   isInStorageFromService(info: any) {
-    return this.dataService.isInStorage(info);
+    return this.localService.isInStorage(info);
   }
 }

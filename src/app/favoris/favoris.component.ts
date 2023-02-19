@@ -1,5 +1,6 @@
 import { Component, OnChanges } from '@angular/core';
-import { DataService } from '../data.service';
+import { DataService } from '../api/data.service';
+import { LocalService } from '../storageAndFav/local.service';
 
 @Component({
   selector: 'app-favoris',
@@ -14,7 +15,7 @@ export class FavorisComponent implements OnChanges {
     console.log(e);
   }
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private localService: LocalService) {}
 
   array: any = [];
 
@@ -38,6 +39,6 @@ export class FavorisComponent implements OnChanges {
   }
 
   isInStorageFromService(info: any) {
-    return this.dataService.isInStorage(info);
+    return this.localService.isInStorage(info);
   }
 }

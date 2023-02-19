@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../data.service';
+import { DataService } from 'src/app/api/data.service';
 
 @Component({
   selector: 'app-actor-page',
